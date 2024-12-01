@@ -1,9 +1,5 @@
 import datetime
-from os import environ 
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+from os import environ  
 
 class Config:
     API_ID = environ.get("API_ID", "29261597")
@@ -18,10 +14,6 @@ class Config:
     FORCE_SUB_ON = environ.get("FORCE_SUB_ON", "True")
     PORT = environ.get('PORT', '8080')
     PICS = environ.get('PICS', 'https://mangandi-2-0.onrender.com/oY0q.JPG')
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
    
 class temp(object): 
     lock = {}
@@ -30,6 +22,3 @@ class temp(object):
     BANNED_USERS = []
     IS_FRWD_CHAT = []
     
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
