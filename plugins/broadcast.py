@@ -1,6 +1,3 @@
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 import asyncio 
 import time, datetime 
@@ -8,10 +5,6 @@ from database import db
 from config import Config
 from pyrogram import Client, filters 
 from pyrogram.errors import InputUserDeactivated, FloodWait, UserIsBlocked
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_message(filters.command("broadcast") & filters.user(Config.BOT_OWNER_ID) & filters.reply)
 async def broadcast (bot, message):
@@ -65,7 +58,3 @@ async def broadcast_messages(user_id, message, log):
         return False, "Blocked"
     except Exception as e:
         return False, "Error"
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz     
