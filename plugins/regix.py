@@ -1,6 +1,3 @@
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 import os
 import sys 
@@ -22,11 +19,6 @@ CLIENT = CLIENT()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 TEXT = Translation.TEXT
-
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_callback_query(filters.regex(r'^start_public'))
 async def pub_(bot, message):
@@ -122,10 +114,6 @@ async def pub_(bot, message):
         await edit(m, 'ᴄᴏᴍᴘʟᴇᴛᴇᴅ', "ᴄᴏᴍᴘʟᴇᴛᴇᴅ", sts) 
         await stop(client, user)
         
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
 async def copy(bot, msg, m, sts):
    try:                                  
      if msg.get("media") and msg.get("caption"):
@@ -151,10 +139,6 @@ async def copy(bot, msg, m, sts):
    except Exception as e:
      print(e)
      sts.add('deleted')
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 async def forward(bot, msg, m, sts, protect):
    try:                             
@@ -193,10 +177,6 @@ async def msg_edit(msg, text, button=None, wait=None):
            await asyncio.sleep(e.value)
            return await msg_edit(msg, text, button, wait)
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
 async def edit(msg, title, status, sts):
    i = sts.get(full=True)
    status = 'ғᴏʀᴡᴀʀᴅɪɴɢ' if status == 10 else f"sʟᴇᴇᴘɪɴɢ {status} s" if str(status).isnumeric() else status
@@ -219,9 +199,9 @@ async def edit(msg, title, status, sts):
    text = TEXT.format(i.total, i.fetched, i.total_files, i.duplicate, i.deleted, i.skip, i.filtered, status, percentage, title)
    if status in ["ᴄᴀɴᴄᴇʟʟᴇᴅ", "ᴄᴏᴍᴘʟᴇᴛᴇᴅ"]:
       button.append(
-         [InlineKeyboardButton('💟sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ💟', url='https://t.me/Silicon_Botz')])
+         [InlineKeyboardButton('💟sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ💟', url='https://t.me/magic_botz')])
       button.append(
-         [InlineKeyboardButton('💠ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ💠', url='https://t.me/Silicon_Bot_Update')]
+         [InlineKeyboardButton('💠ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ💠', url='https://t.me/magic_botz')]
          )
    else:
       button.append([InlineKeyboardButton('• ᴄᴀɴᴄᴇʟ', 'terminate_frwd')])
@@ -235,10 +215,6 @@ async def is_cancelled(client, user, msg, sts):
       await stop(client, user)
       return True 
    return False 
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 async def stop(client, user):
    try:
@@ -255,11 +231,6 @@ async def send(bot, user, text):
    except:
       pass 
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
-
 def custom_caption(msg, caption):
   if msg.media:
     if (msg.video or msg.document or msg.audio or msg.photo):
@@ -274,10 +245,6 @@ def custom_caption(msg, caption):
           return caption.format(filename=file_name, size=get_size(file_size), caption=fcaption)
         return fcaption
   return None
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 def get_size(size):
   units = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB"]
@@ -295,10 +262,6 @@ def media(msg):
         return getattr(media, 'file_id', None)
   return None 
   
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
 def TimeFormatter(milliseconds: int) -> str:
     seconds, milliseconds = divmod(int(milliseconds), 1000)
     minutes, seconds = divmod(seconds, 60)
@@ -321,10 +284,6 @@ async def terminate_frwding(bot, m):
     temp.CANCEL[user_id] = True 
     await m.answer("ғᴏʀᴡᴀʀᴅɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ !", show_alert=True)
 
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
-
 @Client.on_callback_query(filters.regex(r'^fwrdstatus'))
 async def status_msg(bot, msg):
     _, status, est_time, percentage, frwd_id = msg.data.split("#")
@@ -339,10 +298,6 @@ async def status_msg(bot, msg):
     est_time = TimeFormatter(milliseconds=est_time)
     est_time = est_time if (est_time != '' or status not in ['completed', 'cancelled']) else '0 s'
     return await msg.answer(PROGRESS.format(percentage, fetched, forwarded, remaining, status, est_time), show_alert=True)
-
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_message(filters.command("stop"))
 async def stop_forwarding(bot, message):
@@ -360,6 +315,3 @@ async def close(bot, update):
     await update.answer()
     await update.message.delete()
     
- #Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
