@@ -13,9 +13,7 @@ from pyrogram.errors.exceptions.bad_request_400 import AccessTokenExpired, Acces
 from pyrogram.errors import FloodWait
 from config import Config
 from translation import Translation
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz   
+ 
 from typing import Union, Optional, AsyncGenerator
 
 logger = logging.getLogger(__name__)
@@ -24,9 +22,7 @@ logger.setLevel(logging.INFO)
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)]\[buttonurl:/{0,2}(.+?)(:same)?])")
 BOT_TOKEN_TEXT = "<b>1) create a bot using @BotFather\n2) Then you will get a message with bot token\n3) Forward that message to me</b>"
 SESSION_STRING_SIZE = 351
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
 async def start_clone_bot(FwdBot, data=None):
    await FwdBot.start()
    #
@@ -73,9 +69,7 @@ async def start_clone_bot(FwdBot, data=None):
    #
    FwdBot.iter_messages = iter_messages
    return FwdBot
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
 class CLIENT: 
   def __init__(self):
      self.api_id = Config.API_ID
@@ -89,9 +83,7 @@ class CLIENT:
      elif user != False:
         data = data.get('token')
      return Client("BOT", self.api_id, self.api_hash, bot_token=data, in_memory=True)
- #Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz  
+ 
   async def add_bot(self, bot, message):
      user_id = int(message.from_user.id)
      msg = await bot.ask(chat_id=user_id, text=BOT_TOKEN_TEXT)
@@ -120,9 +112,7 @@ class CLIENT:
      }
      await db.add_bot(details)
      return True
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
   async def add_login(self, bot, message):
     user_id = int(message.from_user.id)
     api_id = Config.API_ID
@@ -231,9 +221,7 @@ async def forward_tag(bot, m):
         # Log the error or handle it accordingly
         print(f"An error occurred: {e}")
         await m.reply("An error occurred while resetting settings. Please try again later.")
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
 @Client.on_message(filters.command('resetall') & filters.user(Config.BOT_OWNER_ID))
 async def resetall(bot, message):
   users = await db.get_all_users()
@@ -273,9 +261,7 @@ async def update_configs(user_id, key, value):
      current['filters'][key] = value
  # temp.CONFIGS[user_id] = value
   await db.update_configs(user_id, current)
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz     
+
 def parse_buttons(text, markup=True):
     buttons = []
     for match in BTN_URL_REGEX.finditer(text):
@@ -297,6 +283,3 @@ def parse_buttons(text, markup=True):
     if markup and buttons:
        buttons = InlineKeyboardMarkup(buttons)
     return buttons if buttons else None
-#Dont Remove My Credit @Silicon_Bot_Update 
-#This Repo Is By @Silicon_Official 
-# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
